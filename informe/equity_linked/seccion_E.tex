@@ -1,0 +1,35 @@
+\section{Cuenta individual \textit{equity-linked}}
+\label{sec:equity-linked}
+
+La cuenta individual se valora por separado del seguro colectivo, con una proyección de cinco años para un hombre de 45 años que empieza con $100\,000$ unidades monetarias. Usamos las mismas $1\,000$ trayectorias para comparar garantías de $100\,000$ y $110\,000$ con un cargo anual del $2\%$ y para medir el efecto de subir el cargo al $3\%$ con la garantía de $110\,000$.
+
+En cada año partimos del saldo que dejó el año anterior, deducimos una fracción $c$ como cargo y aplicamos el rendimiento al importe que queda. Si $C_t$ es el cargo del año $t$ y $Y_t=0{,}04+0{,}15Z_t$ es el logrendimiento, con $Z_t$ normal estándar e independiente entre años y trayectorias, calculamos el saldo al cierre $A_t$ como
+\[
+    C_t=cA_{t-1},
+    \qquad
+    A_t=(A_{t-1}-C_t)e^{Y_t}.
+\]
+Para calcular la permanencia seguimos el modelo de decrementos múltiples de la sección A, con mortalidad masculina de Costa Rica de 2023 para las edades de 45 a 49 años y una probabilidad anual de renuncia del $3\%$, de modo que la probabilidad de seguir vigente durante el año $t$ es $(1-q_{45+t-1}'^{(1)})(1-0{,}03)$. Al multiplicar esas probabilidades año a año obtenemos la permanencia acumulada $s_t$, que vale $s_0=1$ al emitir y llega a $s_5=84{,}3464\%$ al cierre del quinto año.
+
+Si al cierre del quinto año el contrato sigue vigente y el saldo queda por debajo de la garantía $G$, el proveedor paga el complemento $H=\max(G-A_5,0)$. En caso de fallecimiento o renuncia antes del vencimiento, el cliente o sus beneficiarios reciben el saldo de la cuenta. Para el NPV de cada trayectoria, se descuentan los flujos al $4\%$ y se pondera cada cargo por la permanencia al inicio de su año, $s_{t-1}$, y el complemento por la permanencia al vencimiento, $s_5$, de modo que
+\[
+    \operatorname{NPV}
+    = \sum_{t=1}^{5}\frac{s_{t-1}C_t}{(1{,}04)^{t-1}}
+    - \frac{s_5H}{(1{,}04)^5}.
+\]
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/equity_linked/comparacion.tex}
+\caption{Resultados por cuenta emitida en unidades monetarias, salvo las frecuencias. Elaboración propia.}
+\label{tab:equity-comparacion}
+\end{table}
+
+Agrupamos las trayectorias por caso y calculamos la frecuencia de pérdida como la proporción de NPV negativos, la frecuencia de activación como la proporción de saldos con $A_5<G$ y el CTE95 como el promedio de las 50 pérdidas más altas, donde cada pérdida es $-\operatorname{NPV}$. Por ejemplo, en la trayectoria 1 del cuadro~\ref{tab:equity-trayectoria-anual} se activa la garantía de $100\,000$ con cargo del $2\%$ y aun así el NPV es de $3\,683{,}35$, porque el valor presente de los cargos, $8\,801{,}98$, supera el del complemento, $5\,118{,}63$.
+
+Con el cargo fijo en $2\%$, pasar de $100\,000$ a $110\,000$ de garantía aumenta el valor presente medio del complemento en $3\,030{,}59$ y reduce en ese mismo monto el NPV medio, ya que el saldo de la cuenta y los cargos son iguales en los dos casos. Al revisar las $1\,000$ trayectorias, encontramos que el complemento aumentó o quedó igual y que el NPV bajó o quedó igual en todas, con lo que la frecuencia de pérdida pasó de $26{,}8\%$ a $36{,}6\%$ y el CTE95 subió $6\,932{,}66$.
+
+Con la garantía de $110\,000$, subir el cargo al $3\%$ deja $4\,330{,}30$ más en valor presente medio de cargos y reduce el monto que se invierte desde el primer año, por lo que al vencimiento el saldo antes de la garantía es $5\,804{,}04$ menor en promedio. Esa reducción hace que la garantía se active en el $57{,}1\%$ de las trayectorias, frente al $49{,}1\%$ con el cargo del $2\%$, y que el valor presente medio del complemento aumente $1\,595{,}10$. El ingreso adicional por cargos supera ese costo, de modo que el NPV medio sube $2\,735{,}20$, la frecuencia de pérdida baja un punto porcentual y el CTE95 baja $1\,436{,}57$.
+
+La garantía de $100\,000$ con cargo del $2\%$ deja el mayor NPV medio y el menor CTE95, por lo que recomendamos ofrecerla si el Comité identifica recursos líquidos para pagar los complementos en escenarios adversos y fija un límite para el CTE95 por cuenta. La comparación se hizo para un solo perfil, con la misma distribución de rendimientos en los cinco años.

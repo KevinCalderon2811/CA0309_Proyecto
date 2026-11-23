@@ -1,0 +1,57 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\definecolor{azul}{HTML}{172B46}
+\definecolor{gris}{HTML}{43556D}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.10}
+
+\begin{document}
+
+{\small\bfseries\color{gris} CA-0309 \enspace / \enspace Grupo 5 \enspace / \enspace Ronda 3\par}
+{\LARGE\bfseries\color{azul} Garantía y cargo de la cuenta equity-linked\par}
+{\small Hombre de 45 años, saldo inicial de 100\,000 u.m. y plazo de cinco años.
+1\,000 trayectorias compartidas, semilla 2026 en R y permanencia contractual ponderada.\par}
+\vspace{4pt}
+
+\textbf{\color{azul}Comparación por contrato emitido}
+{\small\color{gris}\enspace Montos en unidades monetarias.\par}
+\smallskip
+\input{resultados/equity_linked/comparacion.tex}
+
+\textbf{Elevar la garantía a 110\,000 con cargo del 2\%.}
+El VP medio del complemento aumenta 3\,030,59 u.m. y el NPV medio disminuye por el mismo importe.
+La frecuencia de pérdida sube 9,8 puntos porcentuales y el CTE95 aumenta 6\,932,66 u.m.
+
+\textbf{Subir el cargo al 3\% con garantía de 110\,000.}
+El proveedor recibe 4\,330,30 u.m. más en VP medio de cargos y asume 1\,595,10 u.m. más en VP medio de complemento.
+Mejoran el NPV medio, la frecuencia de pérdida y el CTE95. El saldo final medio antes de la garantía baja 5\,804,04 u.m. y la frecuencia de activación sube 8 puntos porcentuales.
+
+\vspace{3pt}
+\textbf{\color{azul}Trayectoria 1}
+{\small\color{gris}\enspace Cierre del año 5 y resultado del proveedor.\par}
+\smallskip
+\input{resultados/equity_linked/trayectoria_1.tex}
+
+El primer rendimiento fue de 12,5344\%. Con cargo del 2\% se invirtieron 98\,000 u.m. y el saldo cerró en 110\,283,67.
+Con cargo del 3\% se invirtieron 97\,000 u.m. y el saldo cerró en 109\,158,32.
+En los tres diseños se activa la garantía. En el primero, el VP de los cargos supera el VP del complemento y el proveedor obtiene un NPV positivo.
+
+\vspace{3pt}
+\textbf{\color{azul}Recomendación al Comité.}
+Elegir garantía de 100\,000 u.m. y cargo del 2\% por su mayor NPV medio y menor pérdida de cola entre los diseños evaluados.
+Condicionar la oferta a contar con recursos líquidos para complementos en escenarios adversos y a un límite de pérdida de cola aprobado por el Comité.
+Dar seguimiento al CTE95 por contrato, que promedia las 50 mayores pérdidas.
+La estimación se limita a una cuenta representativa y a retornos anuales independientes con parámetros fijos.
+
+\vfill
+{\footnotesize\color{gris} Fuente: guía revisada del grupo 5, secciones E, 3 y 4, y tabla de mortalidad suministrada de Costa Rica 2023.\par}
+
+\end{document}

@@ -12,8 +12,11 @@ Abrir R con la carpeta raíz del proyecto como directorio de trabajo (`here()` l
 | `R/2_mortalidad.R` | A. Decrementos y multiestado | `datos/procesados/Resultados A.xlsx` |
 | `R/3_profit_testing.R` | C. Flujos, reservas y profit testing | `datos/procesados/Resultados C.xlsx` |
 | `R/4_escenario_adverso.R` | D. Escenario adverso y respaldo | `datos/procesados/Resultados D.xlsx`, `figuras/recursos_vs_reserva.pdf` |
+| `R/equity_linked.R` | E. Equity-linked y cargo adicional | `resultados/equity_linked/` |
 
 `4_escenario_adverso.R` carga `3_profit_testing.R` con `source()`, así que basta correr el 4 para obtener C y D.
+
+La sección E se ejecuta por separado. Las instrucciones y la ficha del foro están en [informe/equity_linked](informe/equity_linked/README.md).
 
 Paquetes: `tidyverse`, `readxl`, `writexl`, `here`.
 
