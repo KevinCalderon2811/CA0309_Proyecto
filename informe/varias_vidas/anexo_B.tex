@@ -1,0 +1,90 @@
+\section*{Anexo B. Cuadros resumen de varias vidas}
+\label{anexo:resumen-b}
+
+\textbf{Población y asignación inicial.} Los cuadros resumen la población
+de A utilizada en B y las parejas hipotéticas asignadas. Los menores de
+30 años permanecen en el seguro colectivo, pero no generan pagos en B.
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/varias_vidas/resumen_parejas_B.tex}
+\caption{Población inicial y admisibilidad de parejas en B. Unidad: personas
+o parejas, según el concepto. Elaboración propia.}
+\label{tab:b-poblacion}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/varias_vidas/resumen_bandas_B.tex}
+\caption{Parejas admisibles por banda de edad y sexo del activo.
+La edad de la pareja muestra el intervalo observado al inicio. Elaboración propia.}
+\label{tab:b-bandas}
+\end{table}
+
+Cada pareja tiene sexo opuesto al activo. Para un hombre se aplica
+$y=x-\delta$ y para una mujer $y=x+\delta$. La diferencia de edad se fija
+al inicio y se conserva durante los cinco años.
+
+\textbf{Probabilidades de pago.} Para resumir las cohortes se calcula, en
+cada cierre, la media ponderada por las cantidades iniciales admisibles:
+$\overline{P}_h(t)=\sum n_{x,s}P_h(x,s;t)/\NParejasB$.
+Estas probabilidades usan mortalidad biológica, sin renuncia.
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/varias_vidas/resumen_probabilidades_B.tex}
+\caption{Probabilidad media de pago al cierre de cada año, ponderada
+por las parejas iniciales. Elaboración propia.}
+\label{tab:b-probabilidades}
+\end{table}
+
+Último sobreviviente significa al menos una persona viva, incluidas ambas.
+Reversión significa cónyuge vivo con el activo ya fallecido.
+
+\clearpage
+\subsection*{Valores presentes de las tres rentas}
+
+Cada renta paga una unidad al cierre de cada año en que se cumple su
+estatus, durante cinco años, con descuento efectivo del $4\%$.
+Los VP se expresan en unidades de renta descontadas y corresponden a
+tres coberturas alternativas.
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/varias_vidas/resumen_vp_B.tex}
+\caption{VP agregados para \NParejasB{} parejas admisibles.
+Elaboración propia.}
+\label{tab:vp-varias-vidas}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\input{resultados/varias_vidas/resumen_sexo_B.tex}
+\caption{Descomposición de los VP por sexo del activo.
+Las dos filas suman el VP agregado de cada cobertura antes del redondeo.
+Elaboración propia.}
+\label{tab:b-vp-sexo}
+\end{table}
+
+\textbf{Ambos vivos.} Su VP es \VPambosB{}. Los pagos requieren la
+supervivencia simultánea de las dos personas y cesan tras el primer
+fallecimiento. Por ello presenta un valor inferior al de último sobreviviente.
+
+\textbf{Último sobreviviente.} Su VP es \VPultimoB{}, el mayor de las
+tres alternativas. La cobertura sigue pagando mientras viva cualquiera
+de las dos personas, incluso si el cónyuge falleció y solo vive el activo.
+
+\textbf{Reversión al cónyuge.} Su VP es \VPreversionB{}. El pago se
+activa cuando el activo ya falleció y su pareja sigue viva, y puede
+repetirse en cierres posteriores. Es distinto de una indemnización
+única por fallecimiento.
+
+Los tres VP no se suman entre sí ni se incorporan al seguro colectivo.
+Para una renta anual de importe $a$, cada VP se multiplica por $a$.
+La descomposición por sexo también refleja la composición de edades
+y la regla de asignación de parejas de cada grupo.

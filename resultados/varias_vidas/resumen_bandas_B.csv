@@ -1,0 +1,7 @@
+"banda","sexo_activo","delta","edad_conyuge_min","edad_conyuge_max","parejas_teoricas","exclusiones_B","parejas_admisibles"
+"30 a 34","FEMENINO",0,30,34,5067,0,5067
+"30 a 34","MASCULINO",0,30,34,3730,0,3730
+"35 a 54","FEMENINO",3,38,57,24300,0,24300
+"35 a 54","MASCULINO",3,32,51,21488,0,21488
+"55 o mas","FEMENINO",5,60,101,19501,0,19501
+"55 o mas","MASCULINO",5,50,91,23163,0,23163

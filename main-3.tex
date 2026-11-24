@@ -4,6 +4,7 @@
 % Core packages
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{tikz-cd}
 \usepackage{multicol}
 
@@ -24,6 +25,7 @@
 \setlength{\parskip}{1\baselineskip}
 
 \begin{document}
+\hypersetup{pageanchor=false}
 \begin{titlepage}
     \begingroup
     \centering
@@ -33,12 +35,12 @@
     \noindent
     \begin{minipage}[c]{0.45\textwidth}
        \centering
-       \includegraphics[width=5.2cm]{UCR_logo.png}
+       \IfFileExists{UCR_logo.png}{\includegraphics[width=5.2cm]{UCR_logo.png}}{\textsc{Universidad de Costa Rica}}
     \end{minipage}
     \hfill
     \begin{minipage}[c]{0.45\textwidth}
        \centering
-       \includegraphics[width=5.2cm]{emat_logo.png}
+       \IfFileExists{emat_logo.png}{\includegraphics[width=5.2cm]{emat_logo.png}}{\textsc{Escuela de Matemática}}
     \end{minipage}
 
     \par\vspace{1.2cm}
@@ -76,6 +78,7 @@
     \vspace*{0.7cm}
     \endgroup
 \end{titlepage}
+\hypersetup{pageanchor=true}
 
 \newpage
 
@@ -88,7 +91,7 @@ En este artículo se analiza la viabilidad de ofrecer a la población del Fondo 
 
  \vspace{-0.3cm}
 
-El estudio contempla una proyección de 5 años, utilizando como insumo incial la población de asociados activos del Fondo Mutual. Se establece el 31 de diciembre del 2025 como la fecha de corte, disponible para el cálculo de la evolución demográficas de la cartera. Ambos productos admiten asociados entre los 0 a 106 años. Adicionalmente para las proyecciones, se incorpora la tabla de mortalidad de Costa Rica al 2023.
+El estudio contempla una proyección de 5 años, utilizando como insumo inicial la población de asociados activos del Fondo Mutual. Se establece el 31 de diciembre del 2025 como fecha de corte para calcular edades cumplidas. El seguro colectivo utiliza la población depurada con edades iniciales entre 0 y 106 años. La alternativa \textit{equity-linked} se estudia por separado para una cuenta representativa de un hombre de 45 años, sin agregarla a la cartera. Para las proyecciones se incorpora la tabla de mortalidad de Costa Rica de 2023.
 
  \vspace{-0.3cm}
 
@@ -126,6 +129,8 @@ Defunciones & 1 \\
 \end{table}
 
 No se encontraron edades fuera del rango anteriormente establecido, ni IDs duplicados. Por lo que se concluyen 138  outliers, finalizando así con una población inicial de $N_0$ = 104 004 usuarios activos.
+
+Las cuotas registran mensualidades ya pagadas. En los activos depurados se observan entre 1 y 278 cuotas; dividirlas por 12 expresa entre 0,0833 y 23,1667 años equivalentes de aportación, sin demostrar afiliación continua. No se utilizan como importes monetarios, recursos ni probabilidades de renuncia.
 
 \vspace{-0.6cm}
 
@@ -244,7 +249,7 @@ El siguiente cuadro presenta los valores esperados para toda la cartera de activ
 5 & 88\,349,26 & 1\,014,10 & 2\,634,97 & 84\,700,19\\
 \hline
 \end{tabular}
-\caption{Proyección acumulada anual de la cartera. Elaboración propia.}
+\caption{Proyección anual de la cartera; fallecimientos y renuncias del año. Elaboración propia.}
 \end{table}
 
 Al cierre del quinto año, se estiman 84  700,19 asociados activos, equivalente al 81,44\%. Análogamente esperan 4 969 y 14 334 muertes y renuncias, respectivamente, siendo esta segunda la principal salida de la cartera.
@@ -258,8 +263,7 @@ Se concluye además que los dos modelos generan los mismos resultados para los c
 
 \vspace{-0.6cm}
 
-% B. Varias vidas (Benjamín): agregar aquí su \section{...} y borrar la línea siguiente.
-\setcounter{section}{2}
+\input{informe/varias_vidas/seccion_B.tex}
 
 \section{Flujos, reservas y profit testing}
 
@@ -419,10 +423,19 @@ Con la garantía de $110\,000$, subir el cargo al $3\%$ deja $4\,330{,}30$ más 
 La garantía de $100\,000$ con cargo del $2\%$ deja el mayor NPV medio y el menor CTE95, por lo que recomendamos ofrecerla si el Comité identifica recursos líquidos para pagar los complementos en escenarios adversos y fija un límite para el CTE95 por cuenta. La comparación se hizo para un solo perfil, con la misma distribución de rendimientos en los cinco años.
 
 % ---------------------------------------------------------------------------
-% Anexos de C y D
+% F. Interpretacion conceptual de NIIF 17.
 % ---------------------------------------------------------------------------
 
-\newpage
+\clearpage
+\begingroup
+\setlength{\parskip}{0.55\baselineskip}
+\input{informe/varias_vidas/seccion_F.tex}
+\endgroup
+
+\clearpage
+\input{informe/varias_vidas/anexo_B.tex}
+
+\clearpage
 
 \section*{Anexo D: escenario adverso}
 
